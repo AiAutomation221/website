@@ -1,0 +1,16 @@
+{
+  "title": "Effortless, Scalable, Smart",
+  "text": "Our AI consulting services deliver scalable, impactful solutions tailored to your business goals. By integrating advanced AI with your existing workflows, we help you optimize operations, elevate customer satisfaction, and prepare for future growth—without adding complexity.",
+  "section": [
+    {
+      "title": "Strategic AI Expertise",
+      "content": "We combine deep technical knowledge with a business-focused approach to craft strategies that deliver measurable, long-term success. Every solution is built to align with your goals and drive results.",
+      "icon": "notes.svg"
+    },
+    {
+      "title": "Why Partner With Us?",
+      "content": "With years of experience in AI implementation, we provide expert guidance at every step, from planning to deployment. Our solutions are practical, adaptable, and designed to ensure your success.",
+      "icon": "notes.svg"
+    }
+  ]
+}

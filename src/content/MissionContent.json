@@ -1,0 +1,36 @@
+{
+  "title": "Explore Practical AI Solutions For Your Business",
+   "text": "From automating workflows to unlocking actionable insights, our custom AI-driven strategies address your business's unique challenges. With a collaborative approach, we make implementation seamless and results-focused.",
+   "section": [
+    {
+      "title": "Custom Chatbots",
+      "content": "Automate customer and internal support with intelligent chat assistants.",
+      "icon": "notes.svg"
+    },
+    {
+      "title": "Process Automation",
+      "content": "WStreamline repetitive tasks to focus on strategic growth.",
+      "icon": "notes.svg"
+    },
+    {
+      "title": "Document Processing",
+      "content": "Automate data extraction and reduce manual paperwork.",
+      "icon": "notes.svg"
+    },
+    {
+      "title": "Smart Assistant Scheduling",
+      "content": "Simplify calendar management with AI-powered tools that optimize meetings and resource allocation",
+      "icon": "notes.svg"
+    },
+    {
+      "title": "Smart Business Dashboards",
+      "content": "Visualize real-time metrics to track performance.",
+      "icon": "notes.svg"
+    },
+    {
+      "title": "Customer Feedback Analysis",
+      "content": "Turn reviews and social data into actionable insights.",
+      "icon": "notes.svg"
+    }
+  ]
+}
