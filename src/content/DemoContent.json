@@ -1,0 +1,29 @@
+{
+    "title": "Interactive Demo",
+    "text": "Experience our product firsthand with our interactive demonstration. See how our solutions can transform your workflow and boost productivity.",
+    "button": {
+      "title": "Try Demo",
+      "color": "#fff"
+    },
+    "features": {
+      "title": "Demo Features",
+      "text": "Explore the key features of our solution",
+      "section": [
+        {
+          "title": "Feature 1",
+          "content": "Description of the first key feature and its benefits.",
+          "icon": "feature1.svg"
+        },
+        {
+          "title": "Feature 2",
+          "content": "Description of the second key feature and its capabilities.",
+          "icon": "feature2.svg"
+        },
+        {
+          "title": "Feature 3",
+          "content": "Description of the third key feature and its advantages.",
+          "icon": "feature3.svg"
+        }
+      ]
+    }
+  }

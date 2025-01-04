@@ -3,23 +3,26 @@ import { Link } from "react-router-dom";
 
 export const FooterSection = styled("footer")`
   background: rgb(241, 242, 243);
-  padding: 2.5rem 0;
+  padding: 1.5rem 0 1rem 0;
+  margin-top: 0;
+  position: relative;
 `;
 
 export const Title = styled("h4")`
-  font-size: 22px;
+  font-size: 20px;
   text-transform: capitalize;
-  color: #18216d;
+  color: #2a348c;
+  margin-bottom: 0.5rem;
 
   @media screen and (max-width: 414px) {
-    padding: 1.5rem 0;
+    padding: 0.5rem 0;
   }
 `;
 
 export const NavLink = styled(Link)`
   display: block;
   font-size: 1rem;
-  margin-bottom: 0.625rem;
+  margin-bottom: 0.375rem;
   transition: all 0.2s ease-in-out;
 
   &:hover,
@@ -33,9 +36,7 @@ export const Extra = styled("section")`
   background: rgb(241, 242, 243);
   position: relative;
   width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-  padding-bottom: 2rem;
+  padding: 0.5rem 0;
 `;
 
 export const LogoContainer = styled("div")`
@@ -44,20 +45,20 @@ export const LogoContainer = styled("div")`
 `;
 
 export const Para = styled("div")`
-  color: #18216d;
+  color: #2a348c;
   font-size: 14px;
   width: 70%;
+  margin: 0.5rem 0;
 `;
 
 export const Large = styled(Link)`
   font-size: 16px;
   color: #000;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
   text-transform: capitalize;
-  line-height: 24px;
+  line-height: 20px;
   display: block;
-  margin-bottom: 0.625rem;
+  margin-bottom: 0.375rem;
   transition: all 0.3s ease-in-out;
   max-width: max-content;
 
@@ -69,11 +70,11 @@ export const Large = styled(Link)`
 `;
 
 export const Chat = styled("p")`
-  color: #18216d;
+  color: #2a348c;
   max-width: fit-content;
-  border-bottom: 1px solid #18216d;
+  border-bottom: 1px solid #2a348c;
   cursor: pointer;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   transition: all 0.3s ease-in-out;
 
   &:hover {
@@ -82,16 +83,11 @@ export const Chat = styled("p")`
   }
 `;
 
-export const Empty = styled("div")`
-  position: relative;
-  height: 53px;
-`;
-
 export const FooterContainer = styled("div")`
   max-width: 510px;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   text-align: center;
   align-items: center;
   transition: all 0.1s ease-in-out;
@@ -108,6 +104,7 @@ export const FooterContainer = styled("div")`
 
   @media screen and (max-width: 769px) {
     width: auto;
+    justify-content: flex-end;
 
     a:not(:last-child) {
       display: none;
@@ -127,26 +124,27 @@ export const FooterContainer = styled("div")`
 `;
 
 export const Language = styled("h4")`
-  font-size: 22px;
+  font-size: 20px;
   text-transform: capitalize;
-  color: #18216d;
+  color: #2a348c;
+  margin-bottom: 0.5rem;
 
   @media screen and (max-width: 414px) {
-    padding: 1.5rem 0;
+    padding: 0.5rem 0;
   }
 `;
 
 export const Label = styled("label")`
-  font-size: 22px;
+  font-size: 20px;
   text-transform: capitalize;
-  color: #18216d;
+  color: #2a348c;
   display: block;
-  margin-bottom: 2rem;
+  margin-bottom: 0.75rem;
   font-family: "Motiva Sans Bold", serif;
 
   @media screen and (max-width: 414px) {
-    padding: 1.5rem 0;
-    margin-bottom: 1rem;
+    padding: 0.5rem 0;
+    margin-bottom: 0.375rem;
   }
 `;
 

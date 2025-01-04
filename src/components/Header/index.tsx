@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Row, Col, Drawer } from "antd";
 import { withTranslation, TFunction } from "react-i18next";
+import { Link, useLocation } from "react-router-dom";
 import Container from "../../common/Container";
 import { SvgIcon } from "../../common/SvgIcon";
 import { Button } from "../../common/Button";
@@ -18,6 +19,7 @@ import {
 
 const Header = ({ t }: { t: TFunction }) => {
   const [visible, setVisibility] = useState(false);
+  const location = useLocation();
 
   const toggleButton = () => {
     setVisibility(!visible);
@@ -25,12 +27,18 @@ const Header = ({ t }: { t: TFunction }) => {
 
   const MenuItem = () => {
     const scrollTo = (id: string) => {
+      if (location.pathname !== '/') {
+        // If not on home page, first navigate to home
+        window.location.href = '/#' + id;
+        return;
+      }
       const element = document.getElementById(id) as HTMLDivElement;
       element.scrollIntoView({
         behavior: "smooth",
       });
       setVisibility(false);
     };
+
     return (
       <>
         <CustomNavLinkSmall onClick={() => scrollTo("about")}>
@@ -41,6 +49,12 @@ const Header = ({ t }: { t: TFunction }) => {
         </CustomNavLinkSmall>
         <CustomNavLinkSmall onClick={() => scrollTo("product")}>
           <Span>{t("Product")}</Span>
+        </CustomNavLinkSmall>
+        <CustomNavLinkSmall as={Link} to="/faq">
+          <Span>{t("FAQ")}</Span>
+        </CustomNavLinkSmall>
+        <CustomNavLinkSmall as={Link} to="/demo">
+          <Span>{t("Demo")}</Span>
         </CustomNavLinkSmall>
         <CustomNavLinkSmall
           style={{ width: "180px" }}

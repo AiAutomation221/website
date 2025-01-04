@@ -3,7 +3,8 @@ export interface ContactProps {
   title: string;
   content: string;
   id: string;
-  t: TFunction;
+  icon?: string; // Add this line
+  t: any;
 }
 
 export interface ValidationTypeProps {

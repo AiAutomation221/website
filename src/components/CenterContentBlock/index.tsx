@@ -23,6 +23,10 @@ const CenterContentBlock = ({
   t,
   id,
 }: ContentBlockProps) => {
+  const isJpgOrPng = (src: string): boolean => {
+    return src?.toLowerCase().match(/\.(jpg|jpeg|png)$/) !== null;
+  };
+
   return (
     <ContentSection
       id={id}
@@ -31,36 +35,34 @@ const CenterContentBlock = ({
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        minHeight: "100vh", // Ensure it takes the full viewport height
+        minHeight: "100vh",
         textAlign: "center",
-        padding: "2rem 1rem", // Add padding for spacing
-        width: "100%", // Ensure it takes full width of the page
-        maxWidth: "100%", // Remove unnecessary restrictions
-        margin: "0 auto", // Ensure the content is centered horizontally
+        padding: "2rem 1rem",
+        width: "100%",
       }}
     >
       <Fade triggerOnce>
-        {/* Centered Title and Content */}
-        <ContentWrapper  style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center", // Horizontal centering
-            justifyContent: "center", // Vertical centering
-            textAlign: "center", // Ensure content alignment
-            width: "100%", // Use full available width
-            maxWidth: "100%", // Remove any constraints
-            padding: "2rem 1rem", // Add spacing
+        <ContentWrapper style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          textAlign: "center",
+          width: "100%",
+          padding: "1rem",
+          maxWidth: "1200px",
         }}>
           <h6
             style={{
-              //fontSize: "2rem", // Match the original size
-              fontWeight: "700", // Ensure boldness
-              textAlign: "center", // Align text centrally
-              margin: "0 auto", // Center horizontally
-              maxWidth: "1000px", // Set the width constraint for expansion
-              lineHeight: "1.2", // Adjust vertical spacing
-              wordBreak: "break-word", // Prevent long words from breaking the layout
-              whiteSpace: "normal", // Allow natural text wrapping
+              fontWeight: "700",
+              textAlign: "center",
+              margin: "0 auto",
+              width: "100%",
+              maxWidth: "1200px",
+              lineHeight: "1.2",
+              wordBreak: "break-word",
+              whiteSpace: "normal",
+              padding: "0 1rem",
             }}
           >
             {t(title)}
@@ -68,50 +70,63 @@ const CenterContentBlock = ({
           <Content
             style={{
               fontSize: "1.2rem",
-              maxWidth: "1000px",
               lineHeight: "1.8",
-              marginBottom: "3rem", // Space before the section grid
-              width: "1000px", // Ensure it takes full width of its container
-   
-              
+              marginBottom: "3rem",
+              width: "100%",
+              maxWidth: "1000px",
+              padding: "0 1rem",
             }}
           >
             {t(content)}
           </Content>
         </ContentWrapper>
 
-        {/* Render Sections in Two Rows of Three */}
         <ServiceWrapper>
-          <Row justify="center" gutter={[32, 32]}>
-            {typeof section === "object" &&
-              section.map(
-                (
-                  item: {
-                    title: string;
-                    content: string;
-                    icon: string;
-                  },
-                  id: number
-                ) => (
-                  <Col
-                    key={id}
-                    lg={8}
-                    md={12}
-                    sm={24}
-                    style={{ textAlign: "center" }}
-                  >
-                    <SvgIcon
-                      src={item.icon}
-                      width="60px"
-                      height="60px"
-                    />
-                    <MinTitle>{t(item.title)}</MinTitle>
-                    <MinPara>{t(item.content)}</MinPara>
-                  </Col>
-                )
-              )}
-          </Row>
-        </ServiceWrapper>
+  <Row justify="center" gutter={[32, 16]}>
+    {typeof section === "object" &&
+      section.map(
+        (
+          item: {
+            title: string;
+            content: string;
+            icon: string;
+          },
+          id: number
+        ) => (
+          <Col
+            key={id}
+            lg={8}
+            md={12}
+            sm={24}
+            style={{ textAlign: "center" }}
+          >
+            {/* Replace the existing SvgIcon with this */}
+            {isJpgOrPng(item.icon) ? (
+              <img 
+                src={item.icon} 
+                alt={item.title} 
+                style={{ 
+                  width: '120px',
+                  height: '120px',
+                  objectFit: 'contain',
+                  marginBottom: '20px',
+                  backgroundColor: 'transparent' // Ensure transparent background,
+                }} 
+              />
+            ) : (
+              <SvgIcon
+                src={item.icon}
+                width="120px"
+                height="120px"
+              />
+            )}
+            <MinTitle>{t(item.title)}</MinTitle>
+            <MinPara>{t(item.content)}</MinPara>
+          </Col>
+        )
+      )}
+  </Row>
+</ServiceWrapper>
       </Fade>
     </ContentSection>
   );
